@@ -9,8 +9,8 @@ throng(start, {
 });
 
 function start() {
-  require('newrelic');
-  var app = require('./lib/index');
+  //require('newrelic');
+  var app = require('./index');
 
   app.listen(PORT, function() {
     console.log('Listening on port: ' + PORT);

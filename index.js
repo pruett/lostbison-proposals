@@ -2,7 +2,7 @@ var express     = require('express'),
     bodyParser  = require('body-parser'),
     jsonParse   = bodyParser.json(),
     postmark    = require('postmark'),
-    client      = new postmark.Client("<server key>");
+    client      = new postmark.Client(process.env.POSTMARK_TOKEN);
     compress    = require('compression'),
     app         = express();
 
