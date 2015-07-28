@@ -30,6 +30,12 @@ var sendEmail = function(data, res) {
 
 app.use(compress());
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.post('/proposal', jsonParse, function(req, res) {
   var proposal = req.body;
 
