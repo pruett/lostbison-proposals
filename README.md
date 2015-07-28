@@ -1,4 +1,4 @@
 # Getting Started
 
 - `npm i`
-- `npm run gulp`
+- `foreman run npm run test`
