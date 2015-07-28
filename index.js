@@ -15,7 +15,7 @@ var sendEmail = function(data, res) {
   sendgrid.send({
     to:       'pruett.kevin@gmail.com',
     from:     'kevin@kevinpruett.com',
-    subject:  'Proposal request from ' + data.email + ' for ' + budget[0] + ' - ' + budget[1] + '!',
+    subject:  'Proposal request from ' + data.email + ' for ' + data.budget[0] + ' - ' + data.budget[1] + '!',
     text:     emailBody
   }, function(err, json) {
     if (err) {
