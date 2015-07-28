@@ -6,11 +6,17 @@ var express    = require('express'),
     app        = express();
 
 var sendEmail = function(data, res) {
+  var emailBody  = 'Client: ' + data.fullName + '\n';
+      emailBody += 'Email: ' + data.email + '\n';
+      emailBody += 'Phone: ' + data.phone + '\n';
+      emailBody += 'Project Details: ' + data.projectDetails + '\n';
+      emailBody += 'Budget: ' + data.budget;
+
   sendgrid.send({
     to:       'pruett.kevin@gmail.com',
     from:     'kevin@kevinpruett.com',
-    subject:  'Hello World',
-    text:     'My first email through SendGrid.'
+    subject:  'Proposal request from ' + data.email + ' for ' + budget[0] + ' - ' + budget[1] + '!',
+    text:     emailBody
   }, function(err, json) {
     if (err) {
       console.error("Unable to send via SendGrid: " + err);
