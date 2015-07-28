@@ -1,0 +1,25 @@
+{
+  "name": "lostbison-proposal-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "mocha -w lib/index.js test/test.js",
+    "start": "node server.js"
+  },
+  "author": "Kevin Pruett",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "supertest": "^0.15.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.12.2",
+    "compression": "^1.4.3",
+    "express": "^4.12.3",
+    "postmark": "^1.0.0",
+    "throng": "^1.0.0"
+  },
+  "engines": {
+    "node": "0.12.2"
+  }
+}
