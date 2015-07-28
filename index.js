@@ -6,10 +6,10 @@ var express    = require('express'),
     app        = express();
 
 var sendEmail = function(data, res) {
-  var emailBody  = 'Client: ' + data.fullName + '\n';
-      emailBody += 'Email: ' + data.email + '\n';
-      emailBody += 'Phone: ' + data.phone + '\n';
-      emailBody += 'Project Details: ' + data.projectDetails + '\n';
+  var emailBody  = 'Client: ' + data.fullName + "\n\n";
+      emailBody += 'Email: ' + data.email + "\n\n";
+      emailBody += 'Phone: ' + data.phone + "\n\n";
+      emailBody += 'Project Details: ' + data.projectDetails + "\n\n";
       emailBody += 'Budget: ' + data.budget;
 
   sendgrid.send({
