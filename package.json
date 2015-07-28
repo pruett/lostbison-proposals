@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "mocha -w lib/index.js test/test.js",
+    "test": "mocha -w index.js test/test.js",
     "start": "node server.js"
   },
   "author": "Kevin Pruett",

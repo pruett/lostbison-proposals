@@ -34,19 +34,19 @@ app.post('/proposal', jsonParse, function(req, res) {
   console.log(proposal);
 
   client.sendEmail({
-    "From": "donotreply@example.com", 
-    "To": "pruett.kevin@gmail.com", 
-    "Subject": "Test", 
+    "From": "donotreply@example.com",
+    "To": "pruett.kevin@gmail.com",
+    "Subject": "Test",
     "TextBody": "Test Message"
   }, function(error, success) {
     if(error) {
         console.error("Unable to send via postmark: " + error.message);
-        return res.sendStatus(500);
+        return;
     }
     console.info("Sent to postmark for delivery")
+    return res.sendStatus(201);
   });
 
-  return res.sendStatus(201);
 });
 
 module.exports = app;

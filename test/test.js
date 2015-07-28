@@ -1,5 +1,5 @@
 var request = require('supertest'),
-    app = require('./../lib/index');
+    app = require('./../index');
 
 //describe('Requests to (/) path', function() {
 
