@@ -6,16 +6,19 @@ var express    = require('express'),
     app        = express();
 
 var sendEmail = function(data, res) {
-  var emailBody  = 'Client: ' + data.fullName + "\n\n";
+  var emailBody  = "This is an automated confirmation of your project submission\n\n";
+      emailBody += "Please do not reply to this email. You will hear from us shortly!\n\n";
+      emailBody += "---------------------------------------------\n\n";
+      emailBody += 'Name: ' + data.fullName + "\n\n";
       emailBody += 'Email: ' + data.email + "\n\n";
       emailBody += 'Phone: ' + data.phone + "\n\n";
-      emailBody += 'Project Details: ' + data.projectDetails + "\n\n";
+      emailBody += "Project Details:\n\n" + data.projectDetails + "\n\n";
       emailBody += 'Budget: ' + data.budget;
 
   sendgrid.send({
-    to:       'pruett.kevin@gmail.com',
-    from:     'kevin@kevinpruett.com',
-    subject:  'Proposal request from ' + data.email + ' for ' + data.budget[0] + ' - ' + data.budget[1] + '!',
+    to:       data.email,
+    from:     'no+reply@lostbison.com',
+    subject:  'Thanks for your project submission!',
     text:     emailBody
   }, function(err, json) {
     if (err) {
